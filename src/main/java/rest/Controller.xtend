@@ -8,5 +8,5 @@ import org.springframework.web.bind.annotation.RestController
 class Controller {
 
 	@RequestMapping("/equipo")
-	def dameEquipo() { return new Equipo("River") }
+	def dameEquipo() { return new Equipo("Calamuchita") }
 }
