@@ -10,13 +10,13 @@ abstract class Repository<T extends Entidad> {
 	@Accessors List<T> pool = new ArrayList<T>()
 
 	def void create(T object) {
-		if (validaNoExistePreviamenteEnRepo(object)) {
+	//	if (validaNoExistePreviamenteEnRepo(object)) {
 			addId(object)
 			object.creationTimestamp = LocalDateTime.now
 			pool.add(object)
-		} else {
-			updateRecord(object)
-		}
+	//	} else {
+	//		updateRecord(object)
+	//	}
 	}
 
 	def void addId(T object) {
