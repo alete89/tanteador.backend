@@ -6,6 +6,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 class Application {
 
     def static void main(String[] args) {
+    	val bootstrap = new Bootstrap()
         SpringApplication.run(Application, args);
     }
 }
