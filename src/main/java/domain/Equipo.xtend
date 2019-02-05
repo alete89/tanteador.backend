@@ -6,6 +6,7 @@ import repository.Entidad
 @Accessors
 class Equipo extends Entidad{
 	String nombre
+	String urlEscudo
 	
 	new(String nombre) {
 		this.nombre = nombre

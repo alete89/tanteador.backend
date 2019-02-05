@@ -1,8 +1,8 @@
 package domain
 
-import org.eclipse.xtend.lib.annotations.Accessors
 import java.time.LocalDateTime
-import java.util.Map
+import java.util.List
+import org.eclipse.xtend.lib.annotations.Accessors
 import repository.Entidad
 
 @Accessors
@@ -12,6 +12,13 @@ class Fecha extends Entidad {
 	LocalDateTime fechaHoraInicio
 	String lugar
 	Boolean iniciado
-	Map<Integer,Integer> setsLocal
-	Map<Integer,Integer> setsVisitante
+	// Map<Integer,Integer> setsLocal
+	// Map<Integer,Integer> setsVisitante
+	List<Set> sets = #[
+		new Set(),
+		new Set(),
+		new Set(),
+		new Set(),
+		new Set()
+	]
 }
