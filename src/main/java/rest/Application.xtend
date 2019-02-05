@@ -7,6 +7,7 @@ class Application {
 
     def static void main(String[] args) {
     	new Bootstrap()
+    	//Database.init()
         SpringApplication.run(Application, args);
     }
 }
