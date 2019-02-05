@@ -6,7 +6,10 @@ import org.eclipse.xtend.lib.annotations.Accessors
 class Set {
 	Integer puntosLocal = 0
 	Integer puntosVisitante = 0
-	
-	new(){}
-	
+
+	new(Integer puntosLocal, Integer puntosVisitante) {
+		this.puntosLocal = puntosLocal
+		this.puntosVisitante = puntosVisitante
+	}
+
 }
