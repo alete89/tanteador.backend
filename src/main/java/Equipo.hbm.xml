@@ -1,0 +1,23 @@
+<?xml version = "1.0" encoding = "utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="domain.Equipo" table="Equipo">
+
+		<meta attribute="class-description">
+			Esta clase contiene a los equipos.
+		</meta>
+
+		<id name="id" type="integer" column="idEquipo">
+			<generator class="native" />
+		</id>
+
+		<property name="nombre" column="nombre" type="string" />
+		<property name="abreviatura" column="abreviatura"
+			type="string" />
+		<property name="urlEscudo" column="urlEscudo" type="string" />
+
+	</class>
+</hibernate-mapping>
