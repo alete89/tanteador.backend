@@ -11,5 +11,7 @@ class Set {
 		this.puntosLocal = puntosLocal
 		this.puntosVisitante = puntosVisitante
 	}
+	
+	new(){}
 
 }
