@@ -1,6 +1,5 @@
 package rest
 
-
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -11,7 +10,7 @@ import domain.Equipo
 class Database {
 	static SessionFactory factory
 
-	def static init() {
+	new() {
 		try {
 			factory = new Configuration().configure().buildSessionFactory()
 		} catch (Throwable ex) {
@@ -19,34 +18,32 @@ class Database {
 			throw new ExceptionInInitializerError(ex)
 		}
 
-		var db = new Database()
+	}
 
+	def static init() {
+//		var db = new Database()
 		/* Algun ejemplito */
-		var Integer river = db.addEquipo("River", "CARP", "../../../assets/logos/0002.png");
-		var Integer boca = db.addEquipo("Boca", "CABJ", "../../../assets/logos/0001.png");
-		
+//		var Integer river = db.addEquipo("River", "CARP", "../../../assets/logos/0002.png");
+//		var Integer boca = db.addEquipo("Boca", "CABJ", "../../../assets/logos/0001.png");
+//		
 		/* List down all the employees */
 //		db.listEmployees();
-
 		/* Update employee's records */
 //		db.updateEmployee(empID1, 5000);
-
 		/* Delete an employee from the database */
 //		db.deleteEmployee(empID2);
-
 		/* List down new list of the employees */
 //		db.listEmployees();
 	}
 
 	/* Method to CREATE an employee in the database */
-	def Integer addEquipo(String nombre, String abreviatura, String urlEscudo) {
+	def Integer addEquipo(Equipo equipo) {
 		var Session session = factory.openSession()
 		var Transaction tx = null;
 		var Integer idEquipo = null;
 
 		try {
 			tx = session.beginTransaction()
-			var Equipo equipo = new Equipo(nombre, abreviatura, urlEscudo)
 			idEquipo = session.save(equipo) as Integer
 			tx.commit()
 		} catch (HibernateException e) {
@@ -58,7 +55,7 @@ class Database {
 		return idEquipo
 	}
 
-	/* Method to  READ all the employees */
+/* Method to  READ all the employees */
 //	def void listEmployees() {
 //		var session = factory.openSession();
 //		var tx = null;
