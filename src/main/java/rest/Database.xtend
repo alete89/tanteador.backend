@@ -6,6 +6,8 @@ import org.hibernate.Transaction;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import domain.Equipo
+import java.util.List
+import java.util.ArrayList
 
 class Database {
 	static SessionFactory factory
@@ -55,29 +57,30 @@ class Database {
 		return idEquipo
 	}
 
-/* Method to  READ all the employees */
-//	def void listEmployees() {
-//		var session = factory.openSession();
-//		var tx = null;
-//
-//		try {
-//			tx = session.beginTransaction();
-//			var employees = session.createQuery("FROM Employee").list();
-//			for (var iterator = employees.iterator(); iterator.hasNext();) {
-//				var employee = (Employee)
-//				iterator.next();
-//				System.out.print("First Name: " + employee.getFirstName());
-//				System.out.print("  Last Name: " + employee.getLastName());
-//				System.out.println("  Salary: " + employee.getSalary());
-//			}
-//			tx.commit();
-//		} catch (HibernateException e) {
-//			if(tx != null) tx.rollback();
-//			e.printStackTrace();
-//		} finally {
-//			session.close();
-//		}
-//	}
+	/* Method to  READ all the employees */
+	def listEquipos() {
+		var Session session = factory.openSession()
+		var Transaction tx = null;
+		var List<Equipo> listaEquipos = new ArrayList()
+
+		try {
+			tx = session.beginTransaction();
+			var equipos = session.createQuery("FROM Equipo").list();
+			for (var iterator = equipos.iterator(); iterator.hasNext();) {
+				var equipo = iterator.next() as Equipo
+				listaEquipos.add(equipo)
+				println("nombre: " + equipo.nombre);
+				println("abr: " + equipo.abreviatura);
+			}
+			tx.commit();
+		} catch (HibernateException e) {
+			if(tx !== null) tx.rollback();
+			e.printStackTrace();
+		} finally {
+			session.close();
+		}
+		return listaEquipos
+	}
 //
 //	/* Method to UPDATE salary for an employee */
 //	def void updateEmployee(Integer EmployeeID, int salary) {

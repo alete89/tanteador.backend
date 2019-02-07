@@ -21,6 +21,11 @@ class Controller {
 		return RepoLocator.repoFechas.pool.get(0)
 	}
 
+	@RequestMapping("/getEquipos")
+	def getEquipos() {
+		return db.listEquipos
+	}
+
 	@PostMapping("/nuevoEquipo")
 	def nuevoEquipo(@RequestBody Equipo body) {
 		db.addEquipo(body)
