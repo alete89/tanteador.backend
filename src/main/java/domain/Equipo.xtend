@@ -10,6 +10,8 @@ class Equipo extends Entidad {
 	String abreviatura
 	String urlEscudo
 	
+	new(){}
+	
 	new(String nombre){
 		this.nombre = nombre
 	}

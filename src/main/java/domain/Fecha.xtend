@@ -21,4 +21,6 @@ class Fecha extends Entidad {
 		new Set(),
 		new Set()
 	]
+	
+	new(){}
 }
