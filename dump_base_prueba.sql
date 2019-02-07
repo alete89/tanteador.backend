@@ -1,3 +1,5 @@
+CREATE DATABASE  IF NOT EXISTS `tanteador` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `tanteador`;
 -- MySQL dump 10.13  Distrib 5.7.25, for Linux (x86_64)
 --
 -- Host: localhost    Database: tanteador
@@ -87,4 +89,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2019-02-06 22:39:03
+-- Dump completed on 2019-02-06 22:49:20
