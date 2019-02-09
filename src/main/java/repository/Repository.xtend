@@ -3,7 +3,6 @@ package repository
 import java.util.ArrayList
 import java.util.List
 import org.eclipse.xtend.lib.annotations.Accessors
-import java.time.LocalDateTime
 
 abstract class Repository<T extends Entidad> {
 
@@ -12,7 +11,6 @@ abstract class Repository<T extends Entidad> {
 	def void create(T object) {
 	//	if (validaNoExistePreviamenteEnRepo(object)) {
 			addId(object)
-			object.creationTimestamp = LocalDateTime.now
 			pool.add(object)
 	//	} else {
 	//		updateRecord(object)
