@@ -7,6 +7,7 @@ import repository.RepoLocator
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.CrossOrigin
+import domain.Usuario
 
 @CrossOrigin
 @RestController
@@ -29,5 +30,10 @@ class Controller {
 	@PostMapping("/nuevoEquipo")
 	def nuevoEquipo(@RequestBody Equipo body) {
 		db.addEquipo(body)
+	}
+	
+	@PostMapping("/nuevoUsuario")
+	def nuevoUsuario(@RequestBody Usuario body) {
+		db.addUsuario(body)
 	}
 }

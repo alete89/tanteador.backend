@@ -8,6 +8,7 @@ import org.hibernate.cfg.Configuration;
 import domain.Equipo
 import java.util.List
 import java.util.ArrayList
+import domain.Usuario
 
 class Database {
 	static SessionFactory factory
@@ -81,6 +82,25 @@ class Database {
 		}
 		return listaEquipos
 	}
+
+	def Integer addUsuario(Usuario usuario) {
+		var Session session = factory.openSession()
+		var Transaction tx = null;
+		var Integer idUsuario = null;
+
+		try {
+			tx = session.beginTransaction()
+			idUsuario = session.save(usuario) as Integer
+			tx.commit()
+		} catch (HibernateException e) {
+			if(tx !== null) tx.rollback()
+			e.printStackTrace()
+		} finally {
+			session.close()
+		}
+		return idUsuario
+	}
+
 //
 //	/* Method to UPDATE salary for an employee */
 //	def void updateEmployee(Integer EmployeeID, int salary) {

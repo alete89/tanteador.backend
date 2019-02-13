@@ -26,6 +26,7 @@
       
       <!-- List of XML mapping files -->
       <mapping resource = "Equipo.hbm.xml"/>
+      <mapping resource = "Usuario.hbm.xml"/>
       
    </session-factory>
 </hibernate-configuration>
